@@ -1,0 +1,87 @@
+import { useEffect, useState } from "react";
+import Sun from "../../assets/icons/Sun.svg";
+import Moon from "../../assets/icons/Moon.svg";
+import Coin from "../../assets/icons/Coin.png";
+
+const Navbar = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false); // State for theme toggling
+
+  const NAV_ITEMS = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Features", href: "#features" },
+    { label: "Market Insights", href: "#insights" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  const handleMenuClick = (href) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const toggleTheme = () => {
+    setIsDarkMode((prev) => !prev);
+    document.body.classList.toggle("dark", !isDarkMode);
+  };
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
+
+  return (
+    <nav
+      className={`flex mx-30 items-center justify-between mt-8 px-8 py-4 rounded-full space-x-2 ${
+        isDarkMode
+          ? "bg-[#112125f8]"
+          : "bg-gradient-to-r from-gray-800 to-gray-400"
+      } relative`}>
+      {/* Logo Section */}
+      <div className="flex items-center">
+        <img
+          className="flex shrink-0 w-14 ml-2"
+          src={Coin}
+          alt="frame logo"
+        />
+        <p className="text-[#F1F510] font-extrabold text-3xl px-5">
+          SWIVT TMS
+        </p>
+      </div>
+
+      {/* Navigation Items */}
+      <div className="flex flex-center space-x-2">
+        {NAV_ITEMS.map((item) => (
+          <button
+            key={item.label}
+            onClick={() => handleMenuClick(item.href)}
+            className="text-white text-center transition-transform transform hover:scale-105 hover:bg-[#F1F510] hover:text-black px-4 py-2 rounded-full">
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="flex items-center gap-7">
+        <button onClick={toggleTheme} className= "flex items-center text-white ml-5 gap-3">
+          <img
+            src={isDarkMode ? Sun : Moon}
+            alt={isDarkMode ? " Light Theme" : " Dark Theme"}
+            className="flex flex-grid h-8 w-auto"
+            />
+            {isDarkMode ? "Light" : "Dark"}
+        </button>
+
+        <button
+        onClick={() => {}}
+        className="text-white text-center transition-transform transform hover:scale-105 hover:bg-[#F1F510] hover:text-black px-4 py-2 rounded-full">
+        Log In
+      </button>
+
+      <button
+        onClick={() => {}}
+        className="text-white text-center transition-transform transform hover:scale-105 hover:bg-[#F1F510] hover:text-black px-4 py-2 rounded-full">
+        Registration
+      </button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

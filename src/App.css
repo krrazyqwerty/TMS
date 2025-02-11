@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "@fontsource/poppins";
+@import "flowbite/src/themes/default";
+
+html, body {
+    overflow-x: hidden;
+    background-color: #001217 ;
+    overflow-y:scroll;
+    font-family:'poppins';
+    color: #f3f2f2;
+}
+
+.scrollbar-hide {
+    scrollbar-width: none; 
+  }
+  
+ 
