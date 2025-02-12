@@ -6,7 +6,7 @@ import clock from "../assets/icons/clock.png";
 const Contacts = () => {
   return (
     <div>
-      <div className="text text-center justify-center">
+      <div className="text text-center justify-center mt-20">
         <p className="text-5xl">
           Let&apos;s <span className="text-[#f3f510]"> Get in Touch </span>
         </p>

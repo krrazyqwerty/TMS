@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import Sun from "../../assets/icons/Sun.svg";
 import Moon from "../../assets/icons/Moon.svg";
 import Coin from "../../assets/icons/Coin.png";
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false); // State for theme toggling
+  const [isDarkMode, setIsDarkMode] = useState(false); 
 
-  const NAV_ITEMS = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Features", href: "#features" },
-    { label: "Market Insights", href: "#insights" },
-    { label: "Contact", href: "#contact" },
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "about", label: "About" },
+    { path: "features", label: "Features" },
+    { path: "insights", label: "Insights" },
+    { path: "contacts", label: "Contacts" },
   ];
 
   const handleMenuClick = (href) => {
@@ -34,6 +35,7 @@ const Navbar = () => {
           ? "bg-[#112125f8]"
           : "bg-gradient-to-r from-gray-800 to-gray-400"
       } relative`}>
+        
       {/* Logo Section */}
       <div className="flex items-center">
         <img
@@ -47,18 +49,20 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Items */}
-      <div className="flex flex-center space-x-2">
-        {NAV_ITEMS.map((item) => (
-          <button
-            key={item.label}
-            onClick={() => handleMenuClick(item.href)}
+      <div className="hidden lg:flex items-center gap-4 lg:gap-2 xl:gap-6 text-sm font-normal rounded-md p-4 xl:p-6">
+        {navLinks.map((link) => (
+          <Link
+            key={link.path}
+            to={link.path}
+            onClick={() => handleMenuClick(link.label)}
             className="text-white text-center transition-transform transform hover:scale-105 hover:bg-[#F1F510] hover:text-black px-4 py-2 rounded-full">
-            {item.label}
-          </button>
+            {link.label}
+          </Link>
         ))}
       </div>
 
       <div className="flex items-center gap-7">
+        
         <button onClick={toggleTheme} className= "flex items-center text-white ml-5 gap-3">
           <img
             src={isDarkMode ? Sun : Moon}

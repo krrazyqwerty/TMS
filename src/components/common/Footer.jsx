@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <footer className="mt-20 bg-[#04181D] text-[#f3f2f2] py-8">
-      <div className="container mx-20 px-4">
+      <div className="container mx-20">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="mb-6 md:mb-0">
             <p className="text-4xl font-bold">
@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="mt-4 text-xs">© Copyright 2024 SWIVT TMS</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
             <div>
               <h2 className="text-sm font-semibold uppercase mb-4">Platform</h2>
               <ul className="text-sm">
@@ -80,14 +80,14 @@ const Footer = () => {
                   <Link to="/privacy">Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link to="faq">FAQ</Link>
+                  <Link to="/faq">FAQ</Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between items-center mt-8 mr-25 pt-8 border-t border-gray-700">
+        <div className="flex justify-between items-center mt-8 pt-8 border-t border-gray-700">
           <p className="text-sm">Follow Us On:</p>
           <div className="flex space-x-4">
             <a href="#">

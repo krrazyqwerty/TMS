@@ -1,8 +1,13 @@
 import Bull from "../assets/icons/Bull.png";
+import About from "../components/About";
+import Features from "../components/Features";
+import Insights from "../components/Insights";
+import Contacts from "../components/Contacts";
 
 const Home = () => {
   return (
-    <div className="flex flex-row items-center justify-center min-h-auto my-30 mx-30">
+    <div className="flex flex-col">
+    <div className="flex flex-row items-center justify-center min-h-auto m-30">
       <div className="flex flex-row space-x-8">
         <div className="flex flex-col items-start pt-20">
           <h1 className="text-left text-[#F1F510] text-6xl sm:text-3xl lg:text-6xl font-bold tracking-wide my-4">
@@ -33,6 +38,18 @@ const Home = () => {
       <div className="flex items-center w-[1556px] h-auto">
         <img src={Bull} alt="Bull" className="object-cover " />
       </div>
+
+      {/* <div className="flex-col">
+        <About />
+        <Features />
+        <Insights />
+        <Contacts />
+      </div> */}
+    </div>
+    <About/>
+    <Features/>
+    <Insights/>
+    <Contacts/>
     </div>
   );
 };
