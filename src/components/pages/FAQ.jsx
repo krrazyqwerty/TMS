@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Cross } from "lucide-react";
+import { Plus } from "lucide-react";
 import image from "../../assets/images/image.png";
 import image1 from "../../assets/images/image1.png";
 import image2 from "../../assets/images/image2.png";
@@ -74,7 +74,7 @@ const FAQSection = () => {
                   setOpenItem(openItem === item.id ? null : item.id)
                 }
                 className="w-full px-6 py-4 flex items-center justify-start text-left">
-                <Cross
+                <Plus
                   className={`w-5 h-5 text-gray-400 transition-transform duration-200 mr-4
                     ${openItem === item.id ? "rotate-45" : ""}`}
                 />

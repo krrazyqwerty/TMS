@@ -3,10 +3,10 @@
 @import "flowbite/src/themes/default";
 
 html, body {
-    overflow-x: hidden;
-    background-color: #001217 ;
-    overflow-y:scroll;
-    font-family:'poppins';
+    overflow-x: hidden !important;
+    background-color: #001217 !important;
+    overflow-y: scroll;
+    font-family:'poppins' !important;
     color: #f3f2f2;
 }
 
